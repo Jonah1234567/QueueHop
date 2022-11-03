@@ -18,23 +18,7 @@ const theme = {
   }
 }
 
-const { google } = require('googleapis');
-const client = new google.auth.JWT(
-  process.env.API_EMAIL,
-  null,
-  process.env.API_PRIVATE,
-  ['https://www.googleapis.com/auth/spreadsheets']
-);
-client.authorize(function (err, tokens) {
-  if (err) {
-    console.log('ERROR!');
-    console.log(err);
-    return;
-  }
-  else {
-    console.log('connected!')
-  }   
-});
+
 
 const App = () => {
   const [loaded] = useFonts({
