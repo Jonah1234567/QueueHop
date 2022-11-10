@@ -19,7 +19,6 @@ const theme = {
 }
 
 
-
 const App = () => {
   const [loaded] = useFonts({
     LatoBlack: require("./assets/fonts/Lato-Black.ttf"),

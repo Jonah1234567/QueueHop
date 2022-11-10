@@ -3,12 +3,12 @@ import assets from "./assets";
 const NFTData = [
   {
     id: "NFT-01",
-    name: "Abstracto #312",
+    name: "Clark Hall Pub",
     creator: "Putri Intan",
     price: 4.25,
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
-    image: assets.nft01,
+    image: assets.CHP,
     bids: [
       {
         id: "BID-11",
