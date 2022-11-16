@@ -7,6 +7,7 @@ Logs.enableExpoCliLogging();
 
 import Home from './screens/Home'
 import Details from './screens/Details'
+import Profile from './screens/Profile';
 
 const Stack = createStackNavigator();
 const theme = {
@@ -30,12 +31,12 @@ const App = () => {
     LatoRegular: require("./assets/fonts/Lato-Regular.ttf"),
   });
   if (!loaded) return null;
-  console.log("hey");
   return (
     <NavigationContainer theme={theme}>
       <Stack.Navigator screenOptions={{ headerShown:false }} initialRouteName="Home">
         <Stack.Screen name="Home" component={ Home }/>
-        <Stack.Screen name="Details" component={ Details }/>
+        <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen name="Profile" component={ Profile }/>
       </Stack.Navigator>
     </NavigationContainer>
   );

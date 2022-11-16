@@ -85,14 +85,14 @@ export const EndDate = () => {
                     fontSize: SIZES.small,
                     color: COLORS.primary
                 }}
-            >Ending In</Text>
+            >Wait Time</Text>
             <Text
                 style={{
                     fontFamily: FONTS.semiBold,
                     fontSize: SIZES.medium,
                     color: COLORS.primary
                 }}
-            >12h 30m</Text>
+            >1h 15m</Text>
       </View>
     )
 }

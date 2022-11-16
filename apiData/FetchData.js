@@ -1,7 +1,7 @@
 const DataAPI = async () => {
     try {
       let data = await fetch(
-        "https://sheets.googleapis.com/v4/spreadsheets/1k1En7elz-mxDEMwkFSRsiGkUOCulpJKgMUWtSLEpCTs/values/Sheet1?valueRenderOption=FORMATTED_VALUE&key=AIzaSyDEiSql14bmWTvwm5aOwOoijmhK-f9Caqs"
+        "https://sheets.googleapis.com/v4/spreadsheets/1HzqNFvyYcxjMUSeFoVCZCVtPZYAyC8DVDLzpvtdnIo0/values/Sheet1?valueRenderOption=FORMATTED_VALUE&key=AIzaSyDEiSql14bmWTvwm5aOwOoijmhK-f9Caqs"
       );
       let { values } = await data.json();
       let [, ...Data] = values.map((data) => data);

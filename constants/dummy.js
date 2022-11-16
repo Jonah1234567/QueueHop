@@ -4,7 +4,7 @@ const NFTData = [
   {
     id: "NFT-01",
     name: "Clark Hall Pub",
-    creator: "Putri Intan",
+    creator: "Address: 30 5 Field Company Ln, Kingston, ON",
     price: 4.25,
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",

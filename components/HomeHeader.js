@@ -1,7 +1,9 @@
-import { View, Text, Image, TextInput } from 'react-native'
+import { View, Text, Image, TextInput, TouchableHighlight } from 'react-native'
 import { COLORS, FONTS, SIZES, assets } from '../constants'
+import { useNavigation } from '@react-navigation/native'
 
-const HomeHeader = ({onSearch}) => {
+const HomeHeader = ({ onSearch }) => {
+  const navigation = useNavigation();
   return (
     <View style={{
       backgroundColor: COLORS.primary,
@@ -13,10 +15,11 @@ const HomeHeader = ({onSearch}) => {
         alignItems: 'center'
       }}>
         <Image
-          source={assets.logo}
-          resizeMode="contain"
-          style={{ width: 90, height: 25 }}
+        source={assets.logo}
+        resizeMode="contain"
+        style={{ width: 90, height: 25 }}
         />
+        <TouchableHighlight onPress={() => navigation.navigate("Profile")}>
         <View style={{ width: 45, height: 45 }}>
           <Image
             source={assets.person01}
@@ -29,6 +32,7 @@ const HomeHeader = ({onSearch}) => {
             style={{position: 'absolute', width: 15, height: 15, bottom: 0, right: 0}}
           />
         </View>
+        </TouchableHighlight>
       </View>
       <View style={{marginVertical: SIZES.font}}>
         <Text style={{fontFamily: FONTS.regular, fontSize: SIZES.small, color: COLORS.white}}>
