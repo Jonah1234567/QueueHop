@@ -17,12 +17,12 @@ const HomeHeader = ({ onSearch }) => {
         <Image
         source={assets.logo}
         resizeMode="contain"
-        style={{ width: 90, height: 25 }}
+        style={{ width: 90, height: 50 }}
         />
         <TouchableHighlight onPress={() => navigation.navigate("Profile")}>
         <View style={{ width: 45, height: 45 }}>
           <Image
-            source={assets.person01}
+            source={assets.profile}
             resizeMode="contain"
             style={{width: '100%', height: '100%'}}
           />

@@ -17,7 +17,7 @@ const DetailsDesc = ({ data }) => {
         }}>
             <NFTTitle
                 title={data.name}
-                subtitle= {data.creator}
+                subTitle= {data.creator}
                 titleSize={SIZES.extraLarge}
                 subTitleSize={SIZES.medium}
                 />

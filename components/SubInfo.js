@@ -17,13 +17,13 @@ export const NFTTitle = ({title, subTitle, titleSize, subTitleSize}) => {
             <Image
                 source={assets.location}
                 resizeMode="contain"
-                style={{width:20, height:20, marginRight:2}}
+                style={{width:25, height:25, marginRight:2}}
                 />
             <Text style={{
                 fontFamily: FONTS.regular,
                 fontSize: subTitleSize,
                 color: COLORS.primary
-                }}>{subTitle}</Text>
+              }}>{ subTitle }</Text>
             </View>
     </View>
   )
@@ -38,11 +38,11 @@ export const ETHPrice = ({price}) => {
             <Image
                 source={assets.man}
                 resizeMode="contain"
-                style={{width:20, height:20, marginRight:2}}
+                style={{width:25, height:25, marginRight:2}}
             />
             <Text style={{
                 fontFamily: FONTS.medium,
-                fontSize: SIZES.font,
+                fontSize: SIZES.medium,
                 color: COLORS.primary
             }}>{price}</Text>
 

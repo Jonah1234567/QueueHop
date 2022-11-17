@@ -4,7 +4,7 @@ import heart from "../assets/icons/heart.png";
 import left from "../assets/icons/left.png";
 import search from "../assets/icons/search.png";
 
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo.webp";
 import nft01 from "../assets/images/nft01.png";
 import nft02 from "../assets/images/nft02.jpeg";
 import nft03 from "../assets/images/nft03.jpeg";
@@ -22,7 +22,7 @@ import stooleys from "../assets/images/stooleys.jpeg";
 import trinity from "../assets/images/trinity.jpeg";
 import brass from "../assets/images/brass.png";
 
-import person01 from "../assets/images/person01.png";
+import profile from "../assets/images/profile.png";
 import person02 from "../assets/images/person02.png";
 import person03 from "../assets/images/person03.png";
 import person04 from "../assets/images/person04.png";
@@ -52,7 +52,7 @@ export default {
   trinity,
   brass,
 
-  person01,
+  profile,
   person02,
   person03,
   person04,
