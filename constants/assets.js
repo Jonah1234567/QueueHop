@@ -1,5 +1,5 @@
 import badge from "../assets/icons/badge.png";
-import eth from "../assets/icons/eth.png";
+import man from "../assets/images/man_stand.png";
 import heart from "../assets/icons/heart.png";
 import left from "../assets/icons/left.png";
 import search from "../assets/icons/search.png";
@@ -13,6 +13,7 @@ import nft05 from "../assets/images/nft05.jpeg";
 import nft06 from "../assets/images/nft06.jpeg";
 import nft07 from "../assets/images/nft07.jpeg";
 import CHP from "../assets/images/ClarkHallPub.png"
+import location from "../assets/images/location.png"
 
 import person01 from "../assets/images/person01.png";
 import person02 from "../assets/images/person02.png";
@@ -21,7 +22,7 @@ import person04 from "../assets/images/person04.png";
 
 export default {
   badge,
-  eth,
+  man,
   heart,
   left,
   search,
@@ -35,6 +36,7 @@ export default {
   nft06,
   nft07,
   CHP,
+  location,
 
   person01,
   person02,

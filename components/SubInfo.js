@@ -10,11 +10,21 @@ export const NFTTitle = ({title, subTitle, titleSize, subTitleSize}) => {
               fontSize: titleSize, 
               color: COLORS.primary
           }}>{title}</Text>
-          <Text style={{
-              fontFamily: FONTS.regular,
-              fontSize: subTitle,
-              color: COLORS.primary
-          }}>{subTitle}</Text>
+          <View style={{
+            flexDirection: 'row',
+            alignItems: 'center'
+            }}>
+            <Image
+                source={assets.location}
+                resizeMode="contain"
+                style={{width:20, height:20, marginRight:2}}
+                />
+            <Text style={{
+                fontFamily: FONTS.regular,
+                fontSize: subTitleSize,
+                color: COLORS.primary
+                }}>{subTitle}</Text>
+            </View>
     </View>
   )
 }
@@ -26,7 +36,7 @@ export const ETHPrice = ({price}) => {
             alignItems: 'center'
       }}>
             <Image
-                source={assets.eth}
+                source={assets.man}
                 resizeMode="contain"
                 style={{width:20, height:20, marginRight:2}}
             />

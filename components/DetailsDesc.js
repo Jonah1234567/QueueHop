@@ -17,9 +17,9 @@ const DetailsDesc = ({ data }) => {
         }}>
             <NFTTitle
                 title={data.name}
-                subtitle={data.creator}
+                subtitle= {data.creator}
                 titleSize={SIZES.extraLarge}
-                subTitleSize={SIZES.font}
+                subTitleSize={SIZES.medium}
                 />
             <ETHPrice price={data.price}/>
         </View>
