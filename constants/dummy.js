@@ -5,7 +5,7 @@ const NFTData = [
     id: "NFT-01",
     name: "Clark Hall Pub",
     creator: "30 5 Field Company Ln, Kingston, ON",
-    price: 4.25,
+    price: 47,
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
     image: assets.CHP,
@@ -27,7 +27,7 @@ const NFTData = [
       {
         id: "BID-13",
         name: "Rosie Wong",
-        price: 4.75,
+        price: 41,
         image: assets.person04,
         date: "December 31, 2019 at 3:50 PM",
       },
@@ -35,12 +35,12 @@ const NFTData = [
   },
   {
     id: "NFT-02",
-    name: "Green Coins",
-    creator: "Siti Nurhaliza",
-    price: 7.25,
+    name: "Stages Nightclub",
+    creator: "390 Princess St, Kingston",
+    price: 72,
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. Nulla sed velit erat vitae leo sem inceptos diam fames arcu hendrerit, quis ultrices in eleifend posuere ipsum conubia porttitor felis.",
-    image: assets.nft02,
+    image: assets.stages,
     bids: [
       {
         id: "BID-21",
@@ -53,12 +53,12 @@ const NFTData = [
   },
   {
     id: "NFT-03",
-    name: "NFT coins race",
-    creator: "Elisabeth aho",
-    price: 95.25,
+    name: "Trinity Social",
+    creator: "424 Princess St, Kingston",
+    price: 87,
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. Lorem ipsum dolor sit amet consectetur adipiscing elit consequat accumsan sapien, lectus convallis malesuada odio curae habitasse dignissim nascetur. Nulla sed velit erat vitae leo sem inceptos diam fames arcu hendrerit, quis ultrices in eleifend posuere ipsum conubia porttitor felis. Lorem ipsum dolor sit amet consectetur adipiscing elit consequat accumsan sapien, lectus convallis malesuada odio curae habitasse dignissim nascetur. Nulla sed velit erat vitae leo sem inceptos diam fames arcu hendrerit, quis ultrices in eleifend posuere ipsum conubia porttitor felis.",
-    image: assets.nft03,
+    image: assets.trinity,
     bids: [
       {
         id: "BID-31",
@@ -78,12 +78,12 @@ const NFTData = [
   },
   {
     id: "NFT-04",
-    name: "Nifty NFT",
-    creator: "Putri Intan",
-    price: 54.25,
+    name: "Ale House & Canteen",
+    creator: "393 Princess St, Kingston",
+    price: 29,
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.Lorem ipsum dolor sit amet consectetur adipiscing elit consequat accumsan sapien, lectus convallis malesuada odio curae habitasse dignissim nascetur.",
-    image: assets.nft04,
+    image: assets.ale,
     bids: [
       {
         id: "BID-41",
@@ -117,12 +117,12 @@ const NFTData = [
   },
   {
     id: "NFT-05",
-    name: "Colorful circles",
-    creator: "David doe",
-    price: 10.25,
+    name: "Brass Pub",
+    creator: "403 Princess St, Kingston",
+    price: 14,
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
-    image: assets.nft05,
+    image: assets.brass,
     bids: [
       {
         id: "BID-51",
@@ -135,12 +135,12 @@ const NFTData = [
   },
   {
     id: "NFT-06",
-    name: "Black box model",
-    creator: "Leo Messi",
-    price: 20.25,
+    name: "Stooleys",
+    creator: "118 Division St, Kingston",
+    price: 7,
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. Lorem ipsum dolor sit amet consectetur adipiscing elit consequat accumsan sapien, lectus convallis malesuada odio curae habitasse dignissim nascetur. Nulla sed velit erat vitae leo sem inceptos diam fames arcu hendrerit, quis ultrices in eleifend posuere ipsum conubia porttitor felis.",
-    image: assets.nft06,
+    image: assets.stooleys,
     bids: [
       {
         id: "BID-61",
@@ -181,12 +181,12 @@ const NFTData = [
   },
   {
     id: "NFT-07",
-    name: "Abstracto soulful art",
-    creator: "Victor de la Cruz",
-    price: 18.25,
+    name: "Barcadia",
+    creator: "V347 Princess St, Kingston",
+    price: 0,
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. Lorem ipsum dolor sit amet consectetur adipiscing elit consequat accumsan sapien, lectus convallis malesuada odio curae habitasse dignissim nascetur. Nulla sed velit erat vitae leo sem inceptos diam fames arcu hendrerit, quis ultrices in eleifend posuere ipsum conubia porttitor felis. Ullamcorper platea penatibus ornare egestas nulla ligula hendrerit nisl suscipit sociosqu maximus, tincidunt aptent habitant purus pharetra ultrices dapibus laoreet nisi lacinia. Porta malesuada netus vel sapien conubia porttitor aliquam ut pretium ante litora molestie senectus magna egestas sociosqu, eget aliquet fames pharetra felis posuere varius fringilla quisque in arcu montes eu ullamcorper.",
-    image: assets.nft07,
+    image: assets.barcadia,
     bids: [],
   },
 ];

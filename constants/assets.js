@@ -12,8 +12,15 @@ import nft04 from "../assets/images/nft04.jpeg";
 import nft05 from "../assets/images/nft05.jpeg";
 import nft06 from "../assets/images/nft06.jpeg";
 import nft07 from "../assets/images/nft07.jpeg";
-import CHP from "../assets/images/ClarkHallPub.png"
-import location from "../assets/images/location.png"
+
+import CHP from "../assets/images/ClarkHallPub.png";
+import location from "../assets/images/location.png";
+import ale from "../assets/images/ale.jpeg";
+import barcadia from "../assets/images/barcadia.jpeg";
+import stages from "../assets/images/stages.jpeg";
+import stooleys from "../assets/images/stooleys.jpeg";
+import trinity from "../assets/images/trinity.jpeg";
+import brass from "../assets/images/brass.png";
 
 import person01 from "../assets/images/person01.png";
 import person02 from "../assets/images/person02.png";
@@ -35,8 +42,15 @@ export default {
   nft05,
   nft06,
   nft07,
+
   CHP,
   location,
+  ale,
+  barcadia,
+  stages,
+  stooleys,
+  trinity,
+  brass,
 
   person01,
   person02,

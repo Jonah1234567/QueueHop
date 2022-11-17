@@ -43,7 +43,7 @@ const Details = ({ route, navigation }) => {
                 backgroundColor: 'rgba(255,255,255,0.5)',
                 zIndex: 1,
             }}>
-                <RectButton minWidth={170} fontSize={SIZES.large} {...SHADOWS.dark}/>
+                <RectButton minWidth={170} text="I'm in Line!" fontSize={SIZES.large}  {...SHADOWS.dark}/>
             </View>
             <FlatList
                 // data={data.bids}
@@ -67,7 +67,7 @@ const Details = ({ route, navigation }) => {
                                     fontFamily: FONTS.semiBold, 
                                     color: COLORS.primary
                                 }}>
-                                    Current Bid
+                                    Analysis
                                 </Text>
                             )}
                         </View>

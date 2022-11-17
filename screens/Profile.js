@@ -21,7 +21,20 @@ const Profile = () => {
 
     }
     return (
-        <Text> Heyyyyy </Text>
+        <View style={{
+            flex: 1, 
+            alignItems: 'center',
+            justifyContent: 'center',
+        }}>
+            <Text>
+            1 , 11/03/2022 00:00:00 {"\n"}
+            5 , 11/03/2022 00:00:00 {"\n"}
+            0 , 11/03/2022 00:00:00 {"\n"}
+            1 , 11/03/2022 00:00:00 {"\n"}
+            6 , 11/03/2022 00:00:00 {"\n"}
+            </Text>
+        </View>
+        
     );
 };
 
