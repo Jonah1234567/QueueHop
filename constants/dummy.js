@@ -7,7 +7,7 @@ const NFTData = [
     creator: "30 5 Field Company Ln, Kingston, ON",
     price: 47,
     description:
-      "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
+      "Clark Hall Pub began with beer sold out of a cooler. It is the oldest student-run pub in Canada, and has always been a place for students, alumni, and profs to relax and have a good time. Run by the Engineering Society, we’re located above the bookstore. Although we were once all eng all the time, we now have a diverse staff and patron base from all faculties and age ranges.",
     image: assets.CHP,
     bids: [
       {

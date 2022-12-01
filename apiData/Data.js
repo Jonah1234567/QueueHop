@@ -19,11 +19,11 @@ export default function Data() {
         />
       );
     }
-    return (
-        <ScrollView>
-            {value.map((files, index) => (
-                <Text> {files[0]} </Text>
-            ))}
+  return (
+      <ScrollView>
+          {value.map((files, index) => (
+              <Text> {files[0]} </Text>
+          ))}
       </ScrollView>
     );
 }

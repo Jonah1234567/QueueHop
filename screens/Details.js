@@ -1,7 +1,11 @@
 import { Text, View, SafeAreaView, Image, StatusBar, FlatList } from 'react-native';
 import { COLORS, SIZES, SHADOWS, FONTS, assets } from '../constants';
-import { CircleButton, RectButton, SubInfo, FocusedStatusBar, DetailsDesc, DetailsBid } from '../components';
+import { CircleButton, RectButton, SubInfo, FocusedStatusBar, DetailsDesc } from '../components';
+import { CarouselCard } from '../components/CarouselCard';
+import { TestText } from '../components/CarouselCard';
+import Grid from '../components/DataGrid';
 import React from 'react';
+// import CarouselCard from '../components';
 
 const DetailsHeader = ({ data, navigation }) => (
     <View style={{width: "100%", height: 373}}>
@@ -45,6 +49,7 @@ const Details = ({ route, navigation }) => {
             }}>
                 <RectButton minWidth={170} text="I'm in Line!" fontSize={SIZES.large}  {...SHADOWS.dark}/>
             </View>
+            {/* <CarouselCard/> */}
             <FlatList
                 // data={data.bids}
                 // renderItem={({ item }) => <DetailsBid bid={item} />}
@@ -69,11 +74,15 @@ const Details = ({ route, navigation }) => {
                                 }}>
                                     Analysis
                                 </Text>
+                                
                             )}
-                        </View>
+                            
+                        </View>                        
+                        <Grid />
                     </React.Fragment>
                 )}
             />
+            
         </SafeAreaView>
     )
 }
