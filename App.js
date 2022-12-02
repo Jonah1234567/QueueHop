@@ -8,6 +8,7 @@ Logs.enableExpoCliLogging();
 import Home from './screens/Home'
 import Details from './screens/Details'
 import Profile from './screens/Profile';
+import { DataProvider } from './apiData/FetchData';
 
 const Stack = createStackNavigator();
 const theme = {
@@ -32,13 +33,15 @@ const App = () => {
   });
   if (!loaded) return null;
   return (
-    <NavigationContainer theme={theme}>
-      <Stack.Navigator screenOptions={{ headerShown:false }} initialRouteName="Home">
-        <Stack.Screen name="Home" component={ Home }/>
-        <Stack.Screen name="Details" component={Details} />
-        <Stack.Screen name="Profile" component={ Profile }/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <DataProvider>
+      <NavigationContainer theme={theme}>
+        <Stack.Navigator screenOptions={{ headerShown:false }} initialRouteName="Home">
+          <Stack.Screen name="Home" component={ Home }/>
+          <Stack.Screen name="Details" component={Details} />
+          <Stack.Screen name="Profile" component={ Profile }/>
+        </Stack.Navigator>
+        </NavigationContainer>
+    </DataProvider>
   );
 }
 

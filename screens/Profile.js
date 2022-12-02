@@ -3,7 +3,6 @@ import { render } from 'react-dom';
 import { ActivityIndicator, FlatList, Text, View } from 'react-native';
 import { COLORS, SIZES, FONTS, SHADOWS } from '../constants';
 import Swiper from "react-native-custom-swiper";
-import Data from '../apiData/Data'
 
 
 const Profile = () => {
@@ -30,7 +29,6 @@ const Profile = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
             }}>
-            <Data/> 
             </View>
         
     );

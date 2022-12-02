@@ -1,8 +1,7 @@
 import { Text, View, SafeAreaView, Image, StatusBar, FlatList } from 'react-native';
 import { COLORS, SIZES, SHADOWS, FONTS, assets } from '../constants';
 import { CircleButton, RectButton, SubInfo, FocusedStatusBar, DetailsDesc } from '../components';
-import { CarouselCard } from '../components/CarouselCard';
-import { TestText } from '../components/CarouselCard';
+import Graph from '../components/Graph';
 import Grid from '../components/DataGrid';
 import React from 'react';
 // import CarouselCard from '../components';
@@ -79,6 +78,7 @@ const Details = ({ route, navigation }) => {
                             
                         </View>                        
                         <Grid />
+                        <Graph />
                     </React.Fragment>
                 )}
             />
