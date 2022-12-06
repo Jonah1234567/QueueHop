@@ -1,4 +1,22 @@
 import assets from "./assets";
+import React from 'react';
+import { DataContext } from '../apiData/FetchData';
+
+const getPeople = () => {
+  const { loading, list } = React.useContext(DataContext);
+
+  const [index, setIndex] = React.useState(0);
+
+  React.useEffect(() => {
+      const timer = setInterval(() => {
+          // console.log(index)
+              setIndex(idx => idx < list.length - 1 ? idx+1 : idx);   
+      }, 1000);
+      return () => clearTimeout(timer);
+  }, []);
+  return list[index][0];
+} 
+
 
 const NFTData = [
   {

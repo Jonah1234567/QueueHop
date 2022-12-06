@@ -2,7 +2,6 @@ import { TouchableOpacity, Image, Span, StyleSheet, View, Text } from 'react-nat
 import React from 'react';
 import { COLORS, SIZES, FONTS, SHADOWS } from '../constants';
 import { FlatGrid } from 'react-native-super-grid';
-import { shadowColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 import { DataContext } from '../apiData/FetchData';
 //#ffffe0
 const Grid = () => {
@@ -23,10 +22,10 @@ const Grid = () => {
     }, [index]);
         
     const items = [
-        { name: 'Current Queue Count', code: '#ffffe0', iconText: '🚶‍♂️🚶‍♀️🚶🏿‍♂️🚶🏻🚶🏻‍♀️🧑‍🦽🚶🏿🚶🏼‍♂️🚶🏾‍♀️', styleType: 'top', data: list[index][0] },
-        { name: 'Est. Wait Time', code: '#ff9780', iconText: '🚶‍♂️🧑‍🦯🚶🏿‍♂️🚶🏽🚶🏻🚶🏻‍♀️🤸🚶🏿🚶🏼', styleType: 'top' },
-        { name: 'Avg. Wait Time Today', code: '#809bff', iconText: '🚶🚶‍♀️🚶🏻‍♀️🧑‍🦽🚶🏿🚶‍♀️      🏃🏻', styleType: 'bottom' },
-        { name: 'People Inside', code: '#ffe066', iconText: '🚶‍♀️🚶‍♂️🚶🏿🚶🏿‍♂️🚶🏻🧑‍🦽🚶🏻‍♀️🚶🏿‍♂️🚶🏼‍♀️', styleType: 'bottom' },
+        { name: 'Current Queue Count', code: '#ffffe0', iconText: '🚶‍♂️🚶‍♀️🚶🏿‍♂️🚶🏻🚶🏻‍♀️🧑‍🦽🚶🏿🚶🏼‍♂️🚶🏾‍♀️', styleType: 'top', data: list[index][1] },
+        { name: 'Est. Wait Time', code: '#ff9780', iconText: '🚶‍♂️🧑‍🦯🚶🏿‍♂️🚶🏽🚶🏻🚶🏻‍♀️🤸🚶🏿🚶🏼', styleType: 'top', data: list[index][1] },
+        { name: 'Avg. Wait Time Today', code: '#809bff', iconText: '🚶🚶‍♀️🚶🏻‍♀️🧑‍🦽🚶🏿🚶‍♀️      🏃🏻', styleType: 'bottom', data: list[index][1] },
+        { name: 'People Inside', code: '#ffe066', iconText: '🚶‍♀️🚶‍♂️🚶🏿🚶🏿‍♂️🚶🏻🧑‍🦽🚶🏻‍♀️🚶🏿‍♂️🚶🏼‍♀️', styleType: 'bottom', data: list[index][1] },
     ];
 
     return (
@@ -44,15 +43,31 @@ const Grid = () => {
                         {item.styleType == 'top' &&
                             <Text style={styles.topIcon}>{item.iconText}</Text>
                             }
-                            <Text>{ item.data}</Text>
+                            
                         <Text style={styles.itemName}>{item.name}</Text>
                         {item.styleType == 'bottom' &&
                             <Text style={styles.botIcon}>{item.iconText}</Text>
-                        }
+                            }
+                            <View style={{
+                                position: 'absolute', left: '45%', top: '40%',
+                            }}>
+                                <Text style={{
+                                    fontSize: SIZES.metrics,
+                                    fontFamily: FONTS.bold,
+                                    }}>{item.data}</Text>
+                            </View>
                     </View>
                     }
                     {item.styleType == 'bottom' &&
-                    <View style={[styles.itemContainer1, { backgroundColor: item.code }]}>
+                        <View style={[styles.itemContainer1, { backgroundColor: item.code }]}>
+                            <View style={{
+                                position: 'absolute', left: '45%', top: '10%',
+                            }}>
+                                <Text style={{
+                                    fontSize: SIZES.metrics,
+                                    fontFamily: FONTS.bold,
+                                    }}>{item.data}</Text>
+                            </View>
                         {item.styleType == 'top' &&
                             <Text style={styles.topIcon}>{item.iconText}</Text>
                         }

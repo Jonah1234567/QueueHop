@@ -78,7 +78,7 @@ const Details = ({ route, navigation }) => {
                             
                         </View>                        
                         <Grid />
-                        <Graph />
+                        {/* <Graph /> */}
                     </React.Fragment>
                 )}
             />

@@ -12,6 +12,7 @@ export const COLORS = {
     medium: 16,
     large: 18,
     extraLarge: 24,
+    metrics: 64,
   };
   
   export const FONTS = {

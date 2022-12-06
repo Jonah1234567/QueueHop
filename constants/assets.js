@@ -23,9 +23,11 @@ import trinity from "../assets/images/trinity.jpeg";
 import brass from "../assets/images/brass.png";
 
 import profile from "../assets/images/profile.png";
-import person02 from "../assets/images/person02.png";
-import person03 from "../assets/images/person03.png";
-import person04 from "../assets/images/person04.png";
+import alex from "../assets/images/alex.png";
+import bryn from "../assets/images/bryn.png";
+import jonah from "../assets/images/jonah.png"
+import julia from "../assets/images/julia.png";
+
 
 export default {
   badge,
@@ -53,7 +55,8 @@ export default {
   brass,
 
   profile,
-  person02,
-  person03,
-  person04,
+  alex,
+  bryn,
+  jonah,
+  julia
 };
