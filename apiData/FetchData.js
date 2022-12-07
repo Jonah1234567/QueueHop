@@ -1,4 +1,5 @@
 import React, { useState,useEffect,useContext } from "react";
+import { NFTData } from "../constants";
 
 const FetchData = async () => {
     try {
@@ -20,7 +21,8 @@ export const DataContext = React.createContext({});
 export const DataProvider  = ({children}) => {
 
   const [data, setData] = useState(null);
-  const [loading,setLoading]=useState(false);
+  const [loading, setLoading] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const getData = async ()=>{
     setLoading(true)
@@ -33,9 +35,23 @@ export const DataProvider  = ({children}) => {
     getData()
   },[])
 
-
+  // Increment currentIndex every 10 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Check if currentIndex is greater than or equal to the length of the list array
+    if (currentIndex >= data.length - 1) {
+      // If it is, do not increment the currentIndex
+      setCurrentIndex(0);
+      return;
+    }
+    // If it is not, increment the currentIndex
+    setCurrentIndex(currentIndex + 1);
+    }, 7000);
+    return () => clearInterval(interval);
+  }, [currentIndex, data]);
+  
   return (
-      <DataContext.Provider value={{loading,list:data}}> 
+      <DataContext.Provider value={{loading,list:data, currentIndex, setCurrentIndex}}> 
         {children}
       </DataContext.Provider>
     )

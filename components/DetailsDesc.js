@@ -3,6 +3,32 @@ import { useState } from 'react';
 import React from 'react';
 import { ETHPrice, EthPrice, NFTTitle } from './SubInfo';
 import { COLORS, SIZES, FONTS } from '../constants';
+import { DataContext } from '../apiData/FetchData';
+
+const CapacityAlert = () => {
+    const { loading, list, currentIndex } = React.useContext(DataContext);
+    const capacity = list[currentIndex][5]
+    return (
+    <View>
+            {capacity == '100 min' &&
+                <View style={{
+                    width: '100%',
+                    height: 26,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backgroundColor: '#ff9780',
+                    borderRadius: 5,
+                }}>
+                    <Text style={{
+                        fontSize: 16,
+                        // color: 'white',
+                        fontFamily: FONTS.bold,
+                    }}>Uh-oh! CHP is at Capacity. Turnaround @ 3PM.</Text>
+                </View>
+            }
+    </View> 
+    )
+}
 
 const DetailsDesc = ({ data }) => {
     const [text, setText] = useState(data.description.slice(0, 100));
@@ -22,8 +48,12 @@ const DetailsDesc = ({ data }) => {
                 subTitleSize={SIZES.medium}
                 />
             <ETHPrice price={data.price}/>
-        </View>
-        <View style={{ marginVertical: SIZES.extraLarge * 1.5 }}>
+            </View>
+            <View style={{ marginTop: SIZES.medium }}>
+                <CapacityAlert />
+            </View>
+            
+        <View style={{ marginVertical: SIZES.medium }}>
             <Text style={{
                     fontSize: SIZES.font,
                     fontFamily: FONTS.semiBold,

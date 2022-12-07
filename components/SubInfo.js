@@ -1,6 +1,8 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
 import { SIZES, FONTS, COLORS, SHADOWS, assets } from '../constants'
+import { useEffect } from 'react/cjs/react.production.min'
+import { DataContext } from '../apiData/FetchData'
 
 export const NFTTitle = ({title, subTitle, titleSize, subTitleSize}) => {
   return (
@@ -29,7 +31,13 @@ export const NFTTitle = ({title, subTitle, titleSize, subTitleSize}) => {
   )
 }
 
-export const ETHPrice = ({price}) => {
+export const ETHPrice = ({ price }) => {
+    const { currentIndex, list } = React.useContext(DataContext);
+
+    const fixedPrice = price === 47 && list ? (
+        list[currentIndex][2]
+    ) : price;
+    
     return (
         <View style={{
             flexDirection: 'row',
@@ -44,8 +52,8 @@ export const ETHPrice = ({price}) => {
                 fontFamily: FONTS.medium,
                 fontSize: SIZES.medium,
                 color: COLORS.primary
-            }}>{price}</Text>
-
+            }}>{fixedPrice}</Text>
+        {/*  */}
       </View>
     )
 }
@@ -76,7 +84,12 @@ export const People = () => {
 }
 
 //  End Date Hard Coded
-export const EndDate = () => { 
+export const EndDate = ({ time }) => { 
+    const { currentIndex, list } = React.useContext(DataContext);
+
+    const fixedTime = time === '1h 15m' && list ? (
+        list[currentIndex][5]
+    ) : time;
     return (
         <View style={{
             paddingHorizontal: SIZES.font,
@@ -95,18 +108,29 @@ export const EndDate = () => {
                     color: COLORS.primary
                 }}
             >Wait Time</Text>
-            <Text
+            {fixedTime == '100 min' &&
+                <Text
                 style={{
                     fontFamily: FONTS.semiBold,
                     fontSize: SIZES.medium,
                     color: COLORS.primary
                 }}
-            >1h 15m</Text>
+                >Capacity</Text>
+            }
+            {fixedTime != '100 min' &&
+                <Text
+                style={{
+                    fontFamily: FONTS.semiBold,
+                    fontSize: SIZES.medium,
+                    color: COLORS.primary
+                }}
+                >{fixedTime}</Text>
+            }
       </View>
     )
 }
   
-export const SubInfo = () => {
+export const SubInfo = ({time}) => {
     return (
         <View style={{
             width: "100%",
@@ -116,7 +140,7 @@ export const SubInfo = () => {
             justifyContent: 'space-between'
       }}>
             <People />
-            <EndDate />
+            <EndDate time={time} />
       </View>
     )
   }

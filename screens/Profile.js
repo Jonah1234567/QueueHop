@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { render } from 'react-dom';
-import { ActivityIndicator, FlatList, Text, View, Image } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, Modal } from 'react-native';
 import { COLORS, SIZES, FONTS, SHADOWS, assets } from '../constants';
 import Swiper from "react-native-custom-swiper";
 
@@ -28,5 +28,7 @@ const Profile = () => {
         
     );
 };
+
+
 
 export default Profile

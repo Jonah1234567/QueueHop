@@ -3,31 +3,23 @@ import React from 'react';
 import { COLORS, SIZES, FONTS, SHADOWS } from '../constants';
 import { FlatGrid } from 'react-native-super-grid';
 import { DataContext } from '../apiData/FetchData';
+import { textDecorationColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 //#ffffe0
 const Grid = () => {
-    const { loading, list } = React.useContext(DataContext);
-
-    const [index, setIndex] = React.useState(0);
+    const { loading, list, currentIndex } = React.useContext(DataContext);
 
     React.useEffect(() => {
-        const timer = setInterval(() => {
-            // console.log(index)
-                setIndex(idx => idx < list.length - 1 ? idx+1 : idx);   
-        }, 1000);
-        return () => clearTimeout(timer);
-    }, []);
-
-    React.useEffect(() => {
-        console.log(index);
-    }, [index]);
+        console.log(currentIndex);
+    }, [currentIndex]);
         
     const items = [
-        { name: 'Current Queue Count', code: '#ffffe0', iconText: '🚶‍♂️🚶‍♀️🚶🏿‍♂️🚶🏻🚶🏻‍♀️🧑‍🦽🚶🏿🚶🏼‍♂️🚶🏾‍♀️', styleType: 'top', data: list[index][1] },
-        { name: 'Est. Wait Time', code: '#ff9780', iconText: '🚶‍♂️🧑‍🦯🚶🏿‍♂️🚶🏽🚶🏻🚶🏻‍♀️🤸🚶🏿🚶🏼', styleType: 'top', data: list[index][1] },
-        { name: 'Avg. Wait Time Today', code: '#809bff', iconText: '🚶🚶‍♀️🚶🏻‍♀️🧑‍🦽🚶🏿🚶‍♀️      🏃🏻', styleType: 'bottom', data: list[index][1] },
-        { name: 'People Inside', code: '#ffe066', iconText: '🚶‍♀️🚶‍♂️🚶🏿🚶🏿‍♂️🚶🏻🧑‍🦽🚶🏻‍♀️🚶🏿‍♂️🚶🏼‍♀️', styleType: 'bottom', data: list[index][1] },
+        { idx: 1, name: 'Current Queue Count', code: '#ffffe0', iconText: '🚶‍♂️🚶‍♀️🚶🏿‍♂️🚶🏻🚶🏻‍♀️🧑‍🦽🚶🏿🚶🏼‍♂️🚶🏾‍♀️', styleType: 'top', data: list[currentIndex][2] },
+        { idx: 2, name: 'Est. Wait Time', code: '#ff9780', iconText: '🚶‍♂️🧑‍🦯🚶🏿‍♂️🚶🏽🚶🏻🚶🏻‍♀️🤸🚶🏿🚶🏼', styleType: 'top', data: list[currentIndex][5] },
+        { idx: 3, name: 'Avg. Wait Time Today', code: '#809bff', iconText: '🚶🚶‍♀️🚶🏻‍♀️🧑‍🦽🚶🏿🚶‍♀️      🏃🏻', styleType: 'bottom', data: list[currentIndex][1] },
+        { idx: 4, name: 'People Inside', code: '#ffe066', iconText: '🚶‍♀️🚶‍♂️🚶🏿🚶🏿‍♂️🚶🏻🧑‍🦽🚶🏻‍♀️🚶🏿‍♂️🚶🏼‍♀️', styleType: 'bottom', data: list[currentIndex][3] },
     ];
-
+    const gl = "yikes!"
+    // console.log("Length: ", list[currentIndex][4].length)
     return (
         <FlatGrid
             itemDimension={130}
@@ -38,36 +30,102 @@ const Grid = () => {
             spacing={10}
             renderItem={({item}) => (
                 <React.Fragment>
-                {item.styleType == 'top' &&
-                    <View style={[styles.itemContainer2, { backgroundColor: item.code }]}>
-                        {item.styleType == 'top' &&
-                            <Text style={styles.topIcon}>{item.iconText}</Text>
+                    {item.styleType == 'top' &&
+                        <View style={[styles.itemContainer2, { backgroundColor: item.code }]}>
+                            
+                            {item.styleType == 'top' &&
+                                <Text style={styles.topIcon}>{item.iconText}</Text>
                             }
                             
-                        <Text style={styles.itemName}>{item.name}</Text>
-                        {item.styleType == 'bottom' &&
-                            <Text style={styles.botIcon}>{item.iconText}</Text>
+                            <Text style={styles.itemName}>{item.name}</Text>
+                            {item.styleType == 'bottom' &&
+                                <Text style={styles.botIcon}>{item.iconText}</Text>
                             }
-                            <View style={{
-                                position: 'absolute', left: '45%', top: '40%',
-                            }}>
-                                <Text style={{
-                                    fontSize: SIZES.metrics,
-                                    fontFamily: FONTS.bold,
+                            {/* {console.log("Length: ", item.data.length)} */}
+                            {item.data.length == 1 &&
+                                < View style={{
+                                    position: 'absolute', left: '45%', top: '45%',
+                                }}>
+                                    <Text style={{
+                                        fontSize: 48,
+                                        fontFamily: FONTS.bold,
                                     }}>{item.data}</Text>
-                            </View>
+                                </View>
+                            }
+                            {item.data.length == 2 &&
+                                < View style={{
+                                    position: 'absolute', left: '40%', top: '45%',
+                                }}>
+                                    <Text style={{
+                                        fontSize: 48,
+                                        fontFamily: FONTS.bold,
+                                    }}>{item.data}</Text>
+                                </View>
+                            }
+                            {item.data.length == 3 &&
+                                < View style={{
+                                    position: 'center', top: '10%', left: '10%',
+                                    justifyContent: 'center'
+                                }}>
+                                    <Text style={{
+                                        fontSize: 48,
+                                        fontFamily: FONTS.bold,
+                                    }}>{item.data}</Text>
+                                </View>
+                            }
+                            {item.data.length >= 4 &&
+                                < View style={{
+                                    position: 'center', left: '15%', top: '10%',
+                                }}>
+                                    {item.data == '100 min' && 
+                                        <Text style={{
+                                            fontSize: 48,
+                                            fontFamily: FONTS.bold,
+                                            }}>{gl}</Text>
+                                    }
+                                    {item.data != '100 min' && 
+                                        <Text style={{
+                                            fontSize: 44,
+                                            fontFamily: FONTS.bold,
+                                            }}>{item.data}</Text>
+                                    }
+                                </View>
+                            }
                     </View>
-                    }
+                }
                     {item.styleType == 'bottom' &&
                         <View style={[styles.itemContainer1, { backgroundColor: item.code }]}>
-                            <View style={{
-                                position: 'absolute', left: '45%', top: '10%',
-                            }}>
-                                <Text style={{
-                                    fontSize: SIZES.metrics,
-                                    fontFamily: FONTS.bold,
+                            {item.data.length == 1 &&
+                                < View style={{
+                                    position: 'absolute', left: '45%', bottom: '45%',
+                                }}>
+                                    <Text style={{
+                                        fontSize: 48,
+                                        fontFamily: FONTS.bold,
                                     }}>{item.data}</Text>
-                            </View>
+                                </View>
+                            }
+                            {item.data.length == 2 &&
+                                < View style={{
+                                    position: 'absolute', left: '40%', bottom: '45%',
+                                }}>
+                                    <Text style={{
+                                        fontSize: 48,
+                                        fontFamily: FONTS.bold,
+                                    }}>{item.data}</Text>
+                                </View>
+                            }
+                            {item.data.length == 3 &&
+                                < View style={{
+                                    position: 'absolute', left: '30%', bottom: '45%',
+                                    justifyContent: 'center'
+                                }}>
+                                    <Text style={{
+                                        fontSize: 48,
+                                        fontFamily: FONTS.bold,
+                                    }}>{item.data}</Text>
+                                </View>
+                            }
                         {item.styleType == 'top' &&
                             <Text style={styles.topIcon}>{item.iconText}</Text>
                         }
@@ -118,6 +176,9 @@ const styles = StyleSheet.create({
         transform: [{rotateY: '180deg'}],
         // color: '#fff',
     },
+    oneVal: {
+        position: 'absolute', left: '40%', top: '40%',
+    }
   });
 
 export default Grid;

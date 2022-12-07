@@ -1,19 +1,24 @@
 import { Text, View, SafeAreaView, Image, StatusBar, FlatList } from 'react-native';
-import { COLORS, SIZES, SHADOWS, FONTS, assets } from '../constants';
+import { COLORS, SIZES, SHADOWS, FONTS, assets, NFTData } from '../constants';
 import { CircleButton, RectButton, SubInfo, FocusedStatusBar, DetailsDesc } from '../components';
-import Graph from '../components/Graph';
 import Grid from '../components/DataGrid';
 import React from 'react';
-// import CarouselCard from '../components';
+import LineButton from '../components/LineButton';
+import { DataContext } from '../apiData/FetchData';
 
-const DetailsHeader = ({ data, navigation }) => (
-    <View style={{width: "100%", height: 373}}>
-        <Image
-            source={data.image}
-            resizeMode="cover"
-            style={{width:"100%", height: "100%"}}
-        />
-        <CircleButton 
+const ImageMemo = React.memo(Image);
+
+const DetailsHeader = ({ data, navigation }) => {
+    const { image } = data;
+   
+    return (
+        <View style={{ width: "100%", height: 373 }}>
+        <ImageMemo
+        source={image}
+        resizeMode="cover"
+        style={{ width: "100%", height: "100%" }}
+    />
+        <CircleButton
             imgUrl={assets.left}
             handlePress={() => navigation.goBack()}
             left={15}
@@ -24,11 +29,38 @@ const DetailsHeader = ({ data, navigation }) => (
             right={15}
             top={StatusBar.currentHeight + 10}
         />
-    </View>
-)
+    </View>)
+}
 
-const Details = ({ route, navigation }) => {
+// const DetailsCapacity = () => {
+//     const { loading, list, currentIndex } = React.useContext(DataContext);
+//     const capacity = list[currentIndex][5]
+//     return (
+//     <View>
+//         {/* {capacity == '100min' && */}
+//             <View style={{
+//                 width: '100%',
+//                 height: 26,
+//                 alignItems: 'center',
+//                 justifyContent: 'center',
+//                 backgroundColor: '#ff9780',
+//                 borderRadius: 5,
+//             }}>
+//                 <Text style={{
+//                     fontSize: 16,
+//                     // color: 'white',
+//                     fontFamily: FONTS.bold,
+//                 }}>Uh-oh! CHP is at Capacity. Turnaround @ 3PM</Text>
+//             </View>
+//         {/* } */}
+//     </View> 
+//     )
+// }
+
+const Details = ({ route, navigation}) => {
     const { data } = route.params;
+    // const { loadinrg, list } = React.useContext(DataContext);r
+    
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <FocusedStatusBar
@@ -46,13 +78,9 @@ const Details = ({ route, navigation }) => {
                 backgroundColor: 'rgba(255,255,255,0.5)',
                 zIndex: 1,
             }}>
-                <RectButton minWidth={170} text="I'm in Line!" fontSize={SIZES.large}  {...SHADOWS.dark}/>
+                <LineButton />
             </View>
-            {/* <CarouselCard/> */}
             <FlatList
-                // data={data.bids}
-                // renderItem={({ item }) => <DetailsBid bid={item} />}
-                // keyExtractor={(item) => item.id}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={{ paddingBottom: SIZES.extraLarge * 3 }}
                 ListHeaderComponent={() => (
@@ -62,10 +90,10 @@ const Details = ({ route, navigation }) => {
                             data={data}
                             navigation={navigation}
                         />
-                        <SubInfo />
+                        <SubInfo time={data.time}/>
                         <View style={{ padding: SIZES.font }}>
                             <DetailsDesc data={data} />
-                            {data.bids.length > 0 && (
+                            
                                 <Text style={{
                                     fontSize: SIZES.font,
                                     fontFamily: FONTS.semiBold, 
@@ -73,12 +101,8 @@ const Details = ({ route, navigation }) => {
                                 }}>
                                     Analysis
                                 </Text>
-                                
-                            )}
-                            
-                        </View>                        
+                        </View> 
                         <Grid />
-                        {/* <Graph /> */}
                     </React.Fragment>
                 )}
             />
