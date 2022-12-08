@@ -15,7 +15,7 @@ const Grid = () => {
     const items = [
         { idx: 1, name: 'Current Queue Count', code: '#ffffe0', iconText: '🚶‍♂️🚶‍♀️🚶🏿‍♂️🚶🏻🚶🏻‍♀️🧑‍🦽🚶🏿🚶🏼‍♂️🚶🏾‍♀️', styleType: 'top', data: list[currentIndex][2] },
         { idx: 2, name: 'Est. Wait Time', code: '#ff9780', iconText: '🚶‍♂️🧑‍🦯🚶🏿‍♂️🚶🏽🚶🏻🚶🏻‍♀️🤸🚶🏿🚶🏼', styleType: 'top', data: list[currentIndex][5] },
-        { idx: 3, name: 'Avg. Wait Time Today', code: '#809bff', iconText: '🚶🚶‍♀️🚶🏻‍♀️🧑‍🦽🚶🏿🚶‍♀️      🏃🏻', styleType: 'bottom', data: list[currentIndex][1] },
+        { idx: 3, name: 'Avg. Wait Time Today', code: '#809bff', iconText: '🚶🚶‍♀️🚶🏻‍♀️🧑‍🦽🚶🏿🚶‍♀️      🏃🏻', styleType: 'bottom', data: list[currentIndex][6] },
         { idx: 4, name: 'People Inside', code: '#ffe066', iconText: '🚶‍♀️🚶‍♂️🚶🏿🚶🏿‍♂️🚶🏻🧑‍🦽🚶🏻‍♀️🚶🏿‍♂️🚶🏼‍♀️', styleType: 'bottom', data: list[currentIndex][3] },
     ];
     const gl = "yikes!"
