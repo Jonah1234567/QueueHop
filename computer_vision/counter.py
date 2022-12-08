@@ -1,7 +1,7 @@
-import os
+import os.path
+
 import cv2 as cv
 import numpy as np
-import time
 
 
 def init_dl():
@@ -28,11 +28,8 @@ def init_image():
 
 def run_dl(net, blob, ln):
     net.setInput(blob)
-    t0 = time.time()
     outputs = net.forward(ln)
-    t = time.time()
-    total_time = t-t0
-    return outputs, total_time
+    return outputs
 
 
 def post_processing(outputs, img):
@@ -70,9 +67,9 @@ def count_people(boxes, confidences, classIDs, classes):
 def counter_wrapper():
     classes, net, ln = init_dl()
     blob, img = init_image()
-    outputs, total_time = run_dl(net, blob, ln)
+    outputs = run_dl(net, blob, ln)
     boxes, confidences, classIDs = post_processing(outputs, img)
     people_count = count_people(boxes, confidences, classIDs, classes)
-    return people_count, total_time
+    return people_count
 
 

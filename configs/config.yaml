@@ -1,0 +1,5 @@
+os: "Windows"
+video: "USB2.0 VGA UVC WebCam"
+buffer_time: 10
+data_path: "data/pic.png"
+oauth_creds: "C:\\Users\\jonah\\OneDrive\\Desktop\\QueueHop\\configs\\creds.json"
